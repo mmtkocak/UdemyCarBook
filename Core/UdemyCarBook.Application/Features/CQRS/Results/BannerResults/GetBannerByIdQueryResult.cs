@@ -1,6 +1,12 @@
-﻿namespace UdemyCarBook.Domain.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UdemyCarBook.Application.Features.CQRS.Results.BannerResults
 {
-    public class Banner
+    public class GetBannerByIdQueryResult
     {
         public int BannerID { get; set; }
         public string Title { get; set; }
