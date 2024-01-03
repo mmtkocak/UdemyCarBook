@@ -1,6 +1,6 @@
-﻿namespace UdemyCarBook.Domain.Entities
+﻿namespace UdemyCarBook.Dto.TestimonialDtos
 {
-    public class Testimonial
+    public class ResultTestimonialDto
     {
         public int TestimonialID { get; set; }
         public string Name { get; set; }

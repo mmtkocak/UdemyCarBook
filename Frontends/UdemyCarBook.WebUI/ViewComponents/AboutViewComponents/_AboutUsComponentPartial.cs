@@ -13,7 +13,7 @@ namespace UdemyCarBook.WebUI.ViewComponents.AboutViewComponents
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task <IViewComponentResult> Invoke()
+        public async Task <IViewComponentResult> InvokeAsync()
         {
             var client=_httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7026/api/Abouts");

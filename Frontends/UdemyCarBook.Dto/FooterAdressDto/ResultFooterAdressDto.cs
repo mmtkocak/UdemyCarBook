@@ -1,6 +1,6 @@
-﻿namespace UdemyCarBook.Domain.Entities
+﻿namespace UdemyCarBook.Dto.FooterAdressDto
 {
-    public class FooterAdress
+    public class ResultFooterAdressDto
     {
         public int FooterAdressID { get; set; }
         public string Description { get; set; }

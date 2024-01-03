@@ -1,6 +1,6 @@
-﻿namespace UdemyCarBook.Domain.Entities
+﻿namespace UdemyCarBook.Application.Features.Mediator.Results.TestimonialResults
 {
-    public class Testimonial
+    public class GetTestimonialQueryResult
     {
         public int TestimonialID { get; set; }
         public string Name { get; set; }
