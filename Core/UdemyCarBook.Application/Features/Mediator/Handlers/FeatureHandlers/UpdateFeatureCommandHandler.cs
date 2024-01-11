@@ -5,11 +5,11 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.FeatureHandlers
 {
-    public class UpdateFeatureCommandHandler : IRequestHandler<UpdateFeatureCommand>
+    public class UpdateAuthorCommandHandler : IRequestHandler<UpdateFeatureCommand>
     {
         private readonly IRepository<Feature> _repository;
 
-        public UpdateFeatureCommandHandler(IRepository<Feature> repository)
+        public UpdateAuthorCommandHandler(IRepository<Feature> repository)
         {
             _repository = repository;
         }

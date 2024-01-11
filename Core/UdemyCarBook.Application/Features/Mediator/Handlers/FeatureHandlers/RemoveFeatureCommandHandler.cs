@@ -6,11 +6,11 @@ using UdemyCarBook.Domain.Entities;
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.FeatureHandlers
 {
 
-    public class RemoveFeatureCommandHandler : IRequestHandler<RemoveFeatureCommand>
+    public class RemoveAuthorCommandHandler : IRequestHandler<RemoveFeatureCommand>
     {
         private readonly IRepository<Feature> _repository;
 
-        public RemoveFeatureCommandHandler(IRepository<Feature> repository)
+        public RemoveAuthorCommandHandler(IRepository<Feature> repository)
         {
             _repository = repository;
         }

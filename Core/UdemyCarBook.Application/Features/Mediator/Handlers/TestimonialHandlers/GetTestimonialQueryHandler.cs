@@ -6,7 +6,7 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.TestimonialHandlers
 {
-    public class GetTestimonialQueryHandler : IRequestHandler<GetTestimonialQuery, List<GetTestimonialQueryResult>>
+    public class GetTestimonialQueryHandler : IRequestHandler<GetTestimonialQuery, List<GetBlogQueryResult>>
     {
         private readonly IRepository<Testimonial> _repository;
 
@@ -15,10 +15,10 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.TestimonialHandler
             _repository = repository;
         }
 
-        public async Task<List<GetTestimonialQueryResult>> Handle(GetTestimonialQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetBlogQueryResult>> Handle(GetTestimonialQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetAllAsync();
-            return values.Select(x => new GetTestimonialQueryResult
+            return values.Select(x => new GetBlogQueryResult
             {
                 Name = x.Name,
                 Title = x.Title,
