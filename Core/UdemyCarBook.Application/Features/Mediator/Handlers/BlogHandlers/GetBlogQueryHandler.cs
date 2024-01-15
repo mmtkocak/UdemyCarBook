@@ -26,6 +26,7 @@ namespace UdemyCarBook.Application.Blogs.Mediator.Handlers.BlogHandlers
                 CoverImageUrl = x.CoverImageUrl,
                 CreatedDate = x.CreatedDate,
                 CategoryID = x.CategoryID,
+                Description = x.Description,
             }).ToList();
         }
     }
