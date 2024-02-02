@@ -20,6 +20,7 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.TestimonialHandler
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetBlogQueryResult
             {
+                TestimonialID = x.TestimonialID,
                 Name = x.Name,
                 Title = x.Title,
                 Comment = x.Comment,

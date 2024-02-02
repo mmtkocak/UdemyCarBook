@@ -12,5 +12,8 @@
         public int categoryID { get; set; }
         public string description { get; set; }
 
+        public string AuthorDescription { get; set; }
+        public string AuthorImageUrl { get; set; }
+
     }
 }

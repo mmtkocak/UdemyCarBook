@@ -5,11 +5,11 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.SocialMediaHandlers
 {
-    public class RemoveSocialMediaCommandHandler : IRequestHandler<RemoveSocialMediaCommand>
+    public class RemoveTagCloudCommandHandler : IRequestHandler<RemoveSocialMediaCommand>
     {
         private readonly IRepository<SocialMedia> _repository;
 
-        public RemoveSocialMediaCommandHandler(IRepository<SocialMedia> repository)
+        public RemoveTagCloudCommandHandler(IRepository<SocialMedia> repository)
         {
             _repository = repository;
         }

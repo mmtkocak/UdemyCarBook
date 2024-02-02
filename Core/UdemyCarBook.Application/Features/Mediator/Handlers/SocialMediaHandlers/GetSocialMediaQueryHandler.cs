@@ -6,11 +6,11 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.SocialMediaHandlers
 {
-    public class GetSocialMediaQueryHandler : IRequestHandler<GetSocialMediaQuery, List<GetSocialMediaQueryResult>>
+    public class GetTagCloudQueryHandler : IRequestHandler<GetSocialMediaQuery, List<GetSocialMediaQueryResult>>
     {
         private readonly IRepository<SocialMedia> _repository;
 
-        public GetSocialMediaQueryHandler(IRepository<SocialMedia> repository)
+        public GetTagCloudQueryHandler(IRepository<SocialMedia> repository)
         {
             _repository = repository;
         }
@@ -21,6 +21,7 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.SocialMediaHandler
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetSocialMediaQueryResult
             {
+                SocialMediaID = x.SocialMediaID,
                 Name = x.Name,
                 Url = x.Url,
                 Icon = x.Icon,

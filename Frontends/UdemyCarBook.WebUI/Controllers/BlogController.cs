@@ -29,6 +29,7 @@ namespace UdemyCarBook.WebUI.Controllers
 
         public async Task<IActionResult> BlogDetail(int id)
         {
+            ViewBag.Blogid=id;
             return View();
         }
     }
