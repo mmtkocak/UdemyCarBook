@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Html.PartialAsync("/Views/AdminLayout/AdminHeaderPartial.cshtml")
+<body>
+    <div id="layout-wrapper">
+        @await Html.PartialAsync("/Views/AdminLayout/AdminNavbarPartial.cshtml")
+        @await Html.PartialAsync("/Views/AdminLayout/AdminSideBarPartial.cshtml")
+        <div class="main-content">
+            @RenderBody()
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @DateTime.Now.Year © BookCar.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-right d-none d-sm-block">
+                                Design & Develop by MEHMET KOÇAK
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="menu-overlay"></div>
+    <script src="/Admin/vertical/assets/js/jquery.min.js"></script>
+    <script src="/Admin/vertical/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/Admin/vertical/assets/js/metismenu.min.js"></script>
+    <script src="/Admin/vertical/assets/js/waves.js"></script>
+    <script src="/Admin/vertical/assets/js/simplebar.min.js"></script>
+    <script src="/Admin/vertical/assets/js/theme.js"></script>
+</body>
+</html>
