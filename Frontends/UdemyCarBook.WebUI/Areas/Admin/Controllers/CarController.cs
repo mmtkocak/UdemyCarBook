@@ -5,17 +5,21 @@ using System.Text;
 using UdemyCarBook.Dto.BrandDtos;
 using UdemyCarBook.Dto.CarDtos;
 
-namespace UdemyCarBook.WebUI.Controllers
+namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
 {
-    public class AdminCarController : Controller
+    [Area("Admin")]
+    [Route("Admin/Car")]
+    public class CarController : Controller
     {
+      
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public AdminCarController(IHttpClientFactory httpClientFactory)
+        public CarController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
 
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -30,6 +34,7 @@ namespace UdemyCarBook.WebUI.Controllers
         }
 
         [HttpGet]
+        [Route("CreateCar")]
         public async Task<IActionResult> CreateCar()
         {
             var client = _httpClientFactory.CreateClient();
@@ -47,6 +52,7 @@ namespace UdemyCarBook.WebUI.Controllers
         }
 
         [HttpPost]
+        [Route("CreateCar")]
         public async Task<IActionResult> CreateCar(CreateCarDto createCarDto)
         {
             var client = _httpClientFactory.CreateClient();
@@ -60,6 +66,7 @@ namespace UdemyCarBook.WebUI.Controllers
             return View();
         }
 
+        [Route("RemoveCar/{id}")]
         public async Task<IActionResult> RemoveCar(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -72,6 +79,7 @@ namespace UdemyCarBook.WebUI.Controllers
         }
 
         [HttpGet]
+        [Route("UpdateCar/{id}")]
         public async Task<IActionResult> UpdateCar(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -103,11 +111,12 @@ namespace UdemyCarBook.WebUI.Controllers
         }
 
         [HttpPost]
+        [Route("UpdateCar/{id}")]
         public async Task<IActionResult> UpdateCar(UpdateCarDto updateCarDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData=JsonConvert.SerializeObject(updateCarDto);
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
+            var jsonData = JsonConvert.SerializeObject(updateCarDto);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync("https://localhost:7026/api/Cars/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {

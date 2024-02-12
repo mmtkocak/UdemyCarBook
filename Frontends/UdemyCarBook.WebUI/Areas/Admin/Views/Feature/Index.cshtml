@@ -1,4 +1,4 @@
-﻿@model List<ResultCarWithBrandsDtos>
+﻿@model List<ResultFeatureDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -11,20 +11,15 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Araba Listesi</h4>
+                        <h4 class="card-title">Araba Özellikleri</h4>
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Marka</th>
-                                        <th>Model</th>
-                                        <th>Vites</th>
-                                        <th>Km</th>
+                                        <th>Özellik</th>
                                         <th>Sil</th>
                                         <th>Güncelle</th>
-                                        <th>Detaylar</th>
-                                        <th>Sitede Gör</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -33,27 +28,18 @@
                                         count++;
                                         <tr>
                                             <th scope="row">@count</th>
-                                            <td>@item.BrandName</td>
-                                            <td>@item.Model</td>
-                                            <td>@item.Transmission</td>
-                                            <td>@item.Km</td>
+                                            <td>@item.Name</td>
                                             <td>
-                                                <a href="/AdminCar/RemoveCar/@item.CarID" class="btn btn-outline-danger">Sil</a>
+                                                <a href="/Admin/Feature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a>
                                             </td>
                                             <td>
-                                                <a href="/AdminCar/UpdateCar/@item.CarID" class="btn btn-outline-success">Güncelle</a>
-                                            </td>
-                                            <td>
-                                                <a href="/AdminCar/CarDetail/@item.CarID" class="btn btn-outline-dark">Detaylar</a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-outline-warning">Sitede Gör</a>
+                                                <a href="/Admin/Feature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a>
                                             </td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                            <a href="/AdminCar/CreateCar/" class="btn btn-outline-primary">Yeni Araç Girişi</a>
+                            <a href="/Admin/Feature/CreateFeature/" class="btn btn-outline-primary">Yeni Özellik Girişi</a>
                         </div>
                     </div>
                 </div>
@@ -61,4 +47,6 @@
         </div>
     </div>
 </div>
+
+
 

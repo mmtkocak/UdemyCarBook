@@ -1,0 +1,28 @@
+﻿@model CreateFeatureDto
+@{
+    ViewData["Title"] = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Araç Özellik Girişi</h4>
+                        <form method="post">                           
+                            <div class="form-group">
+                                <label>Özellik Adı</label>
+                                <input type="text" class="form-control" required placeholder="Özellik" asp-for="Name">
+                            </div>                          
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
