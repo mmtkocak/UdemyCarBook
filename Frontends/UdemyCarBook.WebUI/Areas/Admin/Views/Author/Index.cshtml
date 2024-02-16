@@ -1,7 +1,8 @@
-﻿@model List<ResultBannerDto>
+﻿@model List<ResultAuthorDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="page-content">
@@ -10,42 +11,39 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Anasayfa Banner Alanı</h4>
+                        <h4 class="card-title">Yazar Listesi</h4>
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
-                                    <tr>                                        
-                                        <th>Başlık</th>
-                                        <th>Açıklama</th>
-                                        <th>Video URL</th>
-                                        <th>Video Açıklama</th>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ad Soyad</th>                           
                                         <th>Sil</th>
                                         <th>Güncelle</th>
-                                        <th>Videoyu İzle</th>
+                                        <th>Yazarın Blogları</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        count++;
                                         <tr>
-                                            <td>@item.Title</td>
-                                            <td>@item.Description</td>
-                                            <td>@item.VideoUrl</td>
-                                            <td>@item.VideoDescription</td>
+                                            <td>@count</td>
+                                            <td><img src="@item.ImageUrl" width="50" class="mr-2 rounded-circle" />  @item.Name</td>
                                             <td>
-                                                <a href="/Admin/Banner/RemoveBanner/@item.BannerID" class="btn btn-outline-danger">Sil</a>
+                                                <a href="/Admin/Author/RemoveAuthor/@item.AuthorID" class="btn btn-outline-danger">Sil</a>
                                             </td>
                                             <td>
-                                                <a href="/Admin/Banner/UpdateBanner/@item.BannerID" class="btn btn-outline-success">Güncelle</a>
+                                                <a href="/Admin/Author/UpdateAuthor/@item.AuthorID" class="btn btn-outline-success">Güncelle</a>
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-outline-dark">Videoyu İzle</a>
+                                                <a href="#" class="btn btn-outline-dark">Yazarın Blogları</a>
                                             </td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                            <a href="/Admin/Banner/CreateBanner/" class="btn btn-outline-primary">Yeni Banner Girişi</a>
+                            <a href="/Admin/Author/CreateAuthor/" class="btn btn-outline-primary">Yeni Yazar Girişi</a>
                         </div>
                     </div>
                 </div>
@@ -53,6 +51,4 @@
         </div>
     </div>
 </div>
-
-
 
