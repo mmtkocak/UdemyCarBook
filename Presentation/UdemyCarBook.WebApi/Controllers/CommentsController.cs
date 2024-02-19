@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using UdemyCarBook.Application.Features.RepositoryPattern;
 using UdemyCarBook.Domain.Entities;
 
@@ -49,6 +48,13 @@ namespace UdemyCarBook.WebApi.Controllers
         public IActionResult GetComment(int id)
         {
             var value = _commentsRepository.GetById(id);
+            return Ok(value);
+        }
+
+        [HttpGet("CommentListByBlog")]
+        public IActionResult CommentListByBlog(int id)
+        {
+            var value = _commentsRepository.GetCommentsByBlogId(id);
             return Ok(value);
         }
     }
