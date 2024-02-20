@@ -1,0 +1,54 @@
+﻿@model List<ResultLocationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Lokasyonlar</h4>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Lokasyon</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                        <th>Konumu Aç</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.LocationName</td>
+                                            <td>
+                                                <a href="/Admin/Location/RemoveLocation/@item.LocationID" class="btn btn-outline-danger">Sil</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/Location/UpdateLocation/@item.LocationID" class="btn btn-outline-success">Güncelle</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/Location/DetailLocation/@item.LocationID" class="btn btn-outline-dark">Haritada Aç</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/Location/CreateLocation/" class="btn btn-outline-primary">Yeni Lokasyon Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
