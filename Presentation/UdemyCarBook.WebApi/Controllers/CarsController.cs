@@ -17,6 +17,7 @@ namespace UdemyCarBook.WebApi.Controllers
         private readonly GetCarWithBrandQueryHandler _getCarWithBrandQueryHandler;
         private readonly GetLast5CarsWithBrandQueryHandler _getLast5CarsWithBrandQueryHandler;
 
+
         public CarsController(CreateCarCommandHandler createCarCommandHandler, GetCarByIdQueryHandler getCarByIdQueryHandler, GetCarQueryHandler getCarQueryHandler, UpdateCarCommandHandler updateCarCommandHandler, RemoveCarCommandHandler removeCarCommandHandler, GetCarWithBrandQueryHandler getCarWithBrandQueryHandler, GetLast5CarsWithBrandQueryHandler getLast5CarsWithBrandQueryHandler)
         {
             _createCarCommandHandler = createCarCommandHandler;
@@ -68,7 +69,7 @@ namespace UdemyCarBook.WebApi.Controllers
         [HttpGet("GetCarWithBrand")]
         public IActionResult GetCarWithBrand()
         {
-            var values =  _getCarWithBrandQueryHandler.Handle();
+            var values = _getCarWithBrandQueryHandler.Handle();
             return Ok(values);
         }
 
@@ -79,5 +80,7 @@ namespace UdemyCarBook.WebApi.Controllers
             var values = _getLast5CarsWithBrandQueryHandler.Handle();
             return Ok(values);
         }
+
+
     }
 }
