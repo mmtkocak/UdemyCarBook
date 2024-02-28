@@ -2,6 +2,6 @@
 {
     public class GetBrandNameByMaxCarQueryResult
     {
-        public string BrandNameByMaxCar { get; set; }
+        public int BrandNameByMaxCar { get; set; }
     }
 }

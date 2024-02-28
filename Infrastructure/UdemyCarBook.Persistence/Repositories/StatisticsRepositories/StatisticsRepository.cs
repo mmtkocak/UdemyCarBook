@@ -91,7 +91,7 @@ namespace UdemyCarBook.Persistence.Repositories.StatisticsRepositories
 
         public int GetCarCountByKmSmallerThen1000()
         {
-            var value = _context.Cars.Where(x => x.Km <= 10000).Count();
+            var value = _context.Cars.Where(x => x.Km <= 1000).Count();
             return value;
         }
 

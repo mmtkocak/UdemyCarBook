@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using UdemyCarBook.Application.Features.Mediator.Results.StatisticsResult;
+using UdemyCarBook.Application.Features.CQRS.Results.BrandResults;
 
 namespace UdemyCarBook.Application.Features.Mediator.Queries.StatisticsQueries
 {
-    public class GetBrandCountQuery : IRequest<GetBrandCountQueryResult>
+    public class GetBrandCountQuery : IRequest<GetBrandQueryResult>
     {
     }
 }
