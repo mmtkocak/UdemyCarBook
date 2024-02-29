@@ -101,24 +101,24 @@ namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
                 ViewBag.v9 = values9.Result.carCountByTranmissionIsAuto;
             }
             #endregion
-            //#region İstatistik10
-            //var responseMessage9 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarCountByTranmissionIsAuto");
-            //if (responseMessage9.IsSuccessStatusCode)
-            //{
-            //    var jsonData9 = await responseMessage9.Content.ReadAsStringAsync();
-            //    var values9 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData9);
-            //    ViewBag.v9 = values9.Result.carCountByTranmissionIsAuto;
-            //}
-            //#endregion
-            //#region İstatistik10
-            //var responseMessage9 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarCountByTranmissionIsAuto");
-            //if (responseMessage9.IsSuccessStatusCode)
-            //{
-            //    var jsonData9 = await responseMessage9.Content.ReadAsStringAsync();
-            //    var values9 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData9);
-            //    ViewBag.v9 = values9.Result.carCountByTranmissionIsAuto;
-            //}
-            //#endregion
+            #region İstatistik10
+            var responseMessage10 = await client.GetAsync("https://localhost:7026/api/Statistics/GetBrandNameByMaxCar");
+            if (responseMessage10.IsSuccessStatusCode)
+            {
+                var jsonData10 = await responseMessage10.Content.ReadAsStringAsync();
+                var values10 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData10);
+                ViewBag.v10 = values10.Result.brandNameByMaxCar;
+            }
+            #endregion
+            #region İstatistik11
+            var responseMessage11 = await client.GetAsync("https://localhost:7026/api/Statistics/GetBlogTitleByMaxBlogComment");
+            if (responseMessage11.IsSuccessStatusCode)
+            {
+                var jsonData11 = await responseMessage11.Content.ReadAsStringAsync();
+                var values11 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData11);
+                ViewBag.v11 = values11.Result.blogTitleByMaxBlogComment;
+            }
+            #endregion
             #region İstatistik12
             var responseMessage12 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarCountByKmSmallerThen1000");
             if (responseMessage12.IsSuccessStatusCode)
@@ -128,16 +128,42 @@ namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
                 ViewBag.v12 = values12.Result.carCountByKmSmallerThen1000;
             }
             #endregion
-
-
-
-
-            ////dasdasdasd
-
-
-
-
-
+            #region İstatistik13
+            var responseMessage13 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarCountByFuelGasolineOrDiesel");
+            if (responseMessage13.IsSuccessStatusCode)
+            {
+                var jsonData13 = await responseMessage13.Content.ReadAsStringAsync();
+                var values13 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData13);
+                ViewBag.v13 = values13.Result.carCountByFuelGasolineOrDiesel;
+            }
+            #endregion
+            #region İstatistik14
+            var responseMessage14 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarCountByFuelElectric");
+            if (responseMessage14.IsSuccessStatusCode)
+            {
+                var jsonData14 = await responseMessage14.Content.ReadAsStringAsync();
+                var values14 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData14);
+                ViewBag.v14 = values14.Result.carCountByFuelElectric;
+            }
+            #endregion
+            #region İstatistik15
+            var responseMessage15 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarBrandAndModelByRentPriceDailyMax");
+            if (responseMessage15.IsSuccessStatusCode)
+            {
+                var jsonData15 = await responseMessage15.Content.ReadAsStringAsync();
+                var values15 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData15);
+                ViewBag.v15 = values15.Result.carBrandAndModelByRentPriceDailyMax;
+            }
+            #endregion
+            #region İstatistik16
+            var responseMessage16 = await client.GetAsync("https://localhost:7026/api/Statistics/GetCarBrandAndModelByRentPriceDailyMin");
+            if (responseMessage16.IsSuccessStatusCode)
+            {
+                var jsonData16 = await responseMessage16.Content.ReadAsStringAsync();
+                var values16 = JsonConvert.DeserializeObject<ResultStatisticsDto>(jsonData16);
+                ViewBag.v16 = values16.Result.carBrandAndModelByRentPriceDailyMin;
+            }
+            #endregion
 
 
             return View();
