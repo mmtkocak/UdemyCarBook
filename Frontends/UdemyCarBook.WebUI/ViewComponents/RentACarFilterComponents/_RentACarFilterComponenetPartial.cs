@@ -2,7 +2,7 @@
 
 namespace UdemyCarBook.WebUI.ViewComponents.RentACarFilterComponents
 {
-    public class _RentACarFilterComponenetPartial:ViewComponent
+    public class _RentACarFilterComponenetPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
