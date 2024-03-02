@@ -40,10 +40,10 @@ namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("CreateBrand")]
-        public async Task<IActionResult> CreateBrand(UpdateBrandDto updateBrandDto)
+        public async Task<IActionResult> CreateBrand(CreateBrandDto createBrandDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(updateBrandDto);
+            var jsonData = JsonConvert.SerializeObject(createBrandDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:7026/api/Brands", stringContent);
             if (responseMessage.IsSuccessStatusCode)

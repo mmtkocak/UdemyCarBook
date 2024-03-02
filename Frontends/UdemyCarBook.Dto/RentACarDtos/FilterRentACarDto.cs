@@ -1,12 +1,11 @@
-﻿namespace UdemyCarBook.Application.Features.Mediator.Results.RentACarResults
+﻿namespace UdemyCarBook.Dto.RentACarDtos
 {
-    public class GetRentACarQueryResult
+    public class FilterRentACarDto
     {
-        public int CarId { get; set; }
+        public int carId { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public decimal Amount { get; set; }
         public string CoverImageUrl { get; set; }
-
     }
 }
